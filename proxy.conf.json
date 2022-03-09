@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://www.themealdb.com",
+    "secure": true,
+    "logLevel": "info"
+  }
+}

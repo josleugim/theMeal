@@ -1,0 +1,17 @@
+<h2 *ngIf="randomMeal" mat-dialog-title>{{randomMeal.strMeal}}</h2>
+<mat-dialog-content class="mat-typography" *ngIf="randomMeal">
+  <h3>Instructions</h3>
+  <p>{{randomMeal.strInstructions}}</p>
+
+  <h3>Category</h3>
+  <p>{{randomMeal.strCategory}}</p>
+
+  <h3>Area</h3>
+  <p>{{randomMeal.strArea}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="buttons">
+    <button mat-button mat-dialog-close color="primary">Cerrar</button>
+    <button mat-button mat-dialog-close color="warn" cdkFocusInitial [routerLink]="['/dishes/' + randomMeal.idMeal]">Detalles</button>
+  </div>
+</mat-dialog-actions>
