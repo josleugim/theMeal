@@ -25,7 +25,7 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserAnimationsModule,
     SharedModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

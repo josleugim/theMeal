@@ -10,6 +10,8 @@ import {ActivatedRoute} from "@angular/router";
 export class DetailsComponent implements OnInit {
   meal: any;
   id: any;
+  mealTags: any;
+  youtubeId: string = '';
 
   constructor(
     private mealService: MealsService,
@@ -25,6 +27,13 @@ export class DetailsComponent implements OnInit {
     this.mealService.findById(id)
       .subscribe((response) => {
         this.meal = response.pop();
+        if (this.meal.strTags) {
+          this.mealTags = this.meal.strTags.split(',');
+        }
+
+        if (this.meal.strYoutube) {
+          this.youtubeId = this.meal.strYoutube.split('v=').pop();
+        }
       })
   }
 }

@@ -1,3 +1,32 @@
-<div *ngIf="meal">
-  <h3>{{meal.strMeal}}</h3>
+<div class="container" *ngIf="meal">
+  <h1>{{meal.strMeal}}</h1>
+  <div class="columns">
+    <div class="column">
+      <figure class="image is-16by9">
+        <img
+          src="{{meal.strMealThumb}}"
+          alt="image"
+        >
+      </figure>
+    </div>
+    <div class="column">
+      <p class="instructions">Instrucciones</p>
+      <p>{{meal.strInstructions}}</p>
+      <div>
+        <label class="tag is-warning" *ngFor="let tag of mealTags">{{tag}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="columns" *ngIf="youtubeId">
+    <div class="column">
+      <youtube-player
+        videoId="{{youtubeId}}"
+        suggestedQuality="highres"
+        [height]="250"
+        [width]="500"
+        [startSeconds]="0"
+        [endSeconds]="">
+      </youtube-player>
+    </div>
+  </div>
 </div>
